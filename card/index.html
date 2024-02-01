@@ -64,7 +64,8 @@
 					<a title="Share by Line" onclick="shareButtonLine()">
 						<i class="iconfont fab fa-line"></i>
 					</a>
-					<a title="Share by LinkedIn" id="shareButtonLinkedin" onclick="shareButtonLinkedin()" style="display: none">
+					<a title="Share by LinkedIn" id="shareButtonLinkedin" onclick="shareButtonLinkedin()"
+						style="display: none">
 						<i class="iconfont icon-linkedin"></i>
 					</a>
 					<!-- <a title="Share by FaceBook" target="_blank" rel="noopener" id="shareButtonFacebook"
@@ -75,8 +76,8 @@
 						onclick="shareButtonTwitter(this)">
 						<i class="iconfont icon-twitter"></i>
 					</a> -->
-					<a title="Instagram" target="_blank" rel="noopener" href="https://www.instagram.com/wangzhengyan1219/"
-						style="display: none">
+					<a title="Instagram" target="_blank" rel="noopener"
+						href="https://www.instagram.com/wangzhengyan1219/" style="display: none">
 						<i class="iconfont icon-instagram"></i>
 					</a>
 					<a title="Share by Mail" id="shareButtonMail" onclick="shareButtonMail(this)">
@@ -106,7 +107,8 @@
 			<div class="form-group">
 				<div style="display: flex;justify-content: space-between; width: 310px ;">
 					<button onclick="showFlex()">查看卡片</button>
-					<button onclick="document.getElementById('loadPromotionalCard').style.display = 'flex'">附加宣傳卡片</button>
+					<button
+						onclick="document.getElementById('loadPromotionalCard').style.display = 'flex'">附加宣傳卡片</button>
 				</div>
 				<div class="form-group">
 					<label>大圖 URL</label>
@@ -339,7 +341,7 @@
 					timer: 1200,
 					showConfirmButton: false
 				});
-				element.href = "mailto:?subject=【卡片分享】&body=使用瀏覽器預覽照片連結：https://tsamcservice.github.io/preview%2F%3FuserId%3D" + userId;
+				element.href = "mailto:?subject=【卡片分享】&body=使用瀏覽器預覽照片連結：" + window.location.origin + "/preview%2F%3FuserId%3D" + userId;
 			}
 			// 分享twitter按钮的點擊事件
 			function shareButtonTwitter(element) {
@@ -385,7 +387,7 @@
 			// 分享Copy Link URL按钮的點擊事件
 			async function shareButtonCopyURL() {
 				// 取得要複製的文字
-				var textToCopy = "https://tsamcservice.github.io/preview/?userId=" + encodeURIComponent(userId)
+				var textToCopy = "https://translate656.github.io/preview/?userId=" + encodeURIComponent(userId)
 
 				try {
 					await navigator.clipboard.writeText(textToCopy);
@@ -426,7 +428,7 @@
 					// 由於line本身無法下載檔案，一律跳轉用外部瀏覽器下載
 					alert("將自動開啟預設瀏覽器\n並下載檔案")
 					liff.openWindow({
-						url: 'https://tsamcservice.github.io/download_card/?userId=' + encodeURIComponent(userId),
+						url: '/download_card/?userId=' + encodeURIComponent(userId),
 						external: true  // 開啟外部瀏覽器
 					});
 				}
